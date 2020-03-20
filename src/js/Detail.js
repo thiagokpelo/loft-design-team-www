@@ -18,7 +18,10 @@ export default class DetailView {
     }
 
     init() {
-      this.Scroll = Scrollbar.init(this.$els.content)
+      this.Scroll = Scrollbar.init(this.$els.content, { alwaysShowTracks: false })
+
+      this.Scroll.track.xAxis.element.remove()
+      this.Scroll.track.yAxis.element.remove()
     }
 
     bindEvent() {
