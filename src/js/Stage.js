@@ -38,7 +38,7 @@ export default class Stage {
     init() {
         this.Scroll = Scrollbar.init(document.querySelector('.scrollarea'), {
             delegateTo: document,
-            continuousScrolling : false,
+            continuousScrolling: false,
             overscrollEffect: 'bounce',
             damping: 0.05,
             plugins: {

@@ -1,4 +1,5 @@
 import { TweenMax as TM, Power2, Power3, Power4, Expo } from 'gsap/all'
+import Scrollbar from 'smooth-scrollbar'
 import { SplitText as ST } from './vendors/gsap/SplitText'
 import { wrap, unwrap, ev } from './utils/utils'
 
@@ -9,14 +10,19 @@ export default class DetailView {
             el: document.querySelector('.detail-view'),
             closeBtn: document.querySelector('.close-detail'),
             title: document.querySelector('.detail-view__title'),
+            content: document.querySelector('.detail-view__content')
         }
 
         this.bindEvent()
+        this.init()
+    }
+
+    init() {
+      this.Scroll = Scrollbar.init(this.$els.content)
     }
 
     bindEvent() {
         document.addEventListener('view:toggle', ({ detail }) => { this.toggleReveal(detail) })
-        document.addEventListener('scroll', console.log);
         this.$els.closeBtn.addEventListener('click', () => { this.onClose() })
     }
 
