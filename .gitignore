@@ -107,3 +107,5 @@ dist
 .DS_Store
 dist
 package-lock.json
+static/**/**
+db/**/**
