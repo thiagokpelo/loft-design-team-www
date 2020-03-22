@@ -48,6 +48,10 @@
 }
 
 .detail-view__content {
+    padding-bottom: 210px;
+    img {
+      width: 500px;
+    }
     p {
         width: 100%;
         max-width: 35vw;
