@@ -9,12 +9,17 @@ media_folder: "static/images/uploads" # Media files will be stored in the repo u
 public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
 
 collections:
-  - name: "book" # Used in routes, e.g., /admin/collections/blog
-    label: "Book" # Used in the UI
-    folder: "/" # The path to the folder where the documents are stored
+  - name: "books" # Used in routes, e.g., /admin/collections/blog
+    label: "Books" # Used in the UI
+    folder: "/db/books" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Book Title", name: "book_title", widget: "string"}
+      - {label: "Book Author", name: "book_author", widget: "string"}
+      - {label: "Book Description", name: "book_description", widget: "string"}
+      - {label: "Book Cover Image", name: "book_cover_url", widget: "file", allow_multiple: false}
+      - {label: "Is Active", name: "is_active", widget: "hidden", default: true}
+      - {label: "Created at", name: "created_at", widget: "hidden", default: now}
+      - {label: "Recommender Name", name: "recommender_name", widget: "string"}
+      - {label: "Recommender Image", name: "recommender_name_image_url", widget: "file", allow_multiple: false}
