@@ -5,7 +5,6 @@
 
 /* DETAIL VIEW
 ---------------------------------------------------------------------------------------------------- */
-$breakpoint_tablet: 768px;
 
 .detail-view {
     overflow: auto;
@@ -22,7 +21,7 @@ $breakpoint_tablet: 768px;
 
     transition: opacity 1s;
 
-    @include maxw($breakpoint_tablet) {
+    @include maxw($bp-mobile) {
       background-color: var(--color-bg);
       z-index: 1000;
 
@@ -47,7 +46,7 @@ $breakpoint_tablet: 768px;
     height: 100vh;
     max-width: 100%;
 
-    @include maxw($breakpoint_tablet) {
+    @include maxw($bp-mobile) {
       padding: 0;
     }
 }
@@ -61,7 +60,7 @@ $breakpoint_tablet: 768px;
     font-size: 11rem;
     color: var(--color-text);
 
-    @include maxw($breakpoint_tablet) {
+    @include maxw($bp-mobile) {
       font-size: 6rem;
     }
 }
@@ -90,7 +89,7 @@ $breakpoint_tablet: 768px;
 }
 
 .detail-view__description {
-  @include maxw($breakpoint_tablet) {
+  @include maxw($bp-mobile) {
     p {
       max-width: 100%;
       margin-right: 0;
