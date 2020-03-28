@@ -10,6 +10,7 @@ export default class DetailView {
             el: document.querySelector('.detail-view'),
             closeBtn: document.querySelector('.close-detail'),
             title: document.querySelector('.detail-view__title'),
+            description: document.querySelector('.detail-view__description'),
             content: document.querySelector('.detail-view__inner')
         }
 
@@ -37,10 +38,10 @@ export default class DetailView {
 
     onOpen() {
         const title = this.$els.el.querySelector('.detail-view__title')
-        const text = this.$els.el.querySelectorAll('p')
+        const contentNodes = this.$els.description.querySelectorAll('p, .tile__image')
         const { title: pageTitle } = APP.Stage.$els
 
-        this.stgs = new ST([title, text], { type: 'lines', linesClass: 'line' })
+        this.stgs = new ST([title, contentNodes], { type: 'lines', linesClass: 'line' })
 
         this.stgs.lines.forEach((l) => {
             const div = document.createElement('div')
@@ -113,6 +114,8 @@ export default class DetailView {
         if (!shouldOpen) return
 
         this.$els.title.innerText = target.$els.title
+        this.$els.description.innerHTML = target.$els.description.innerHTML
+
         this.onOpen()
     }
 

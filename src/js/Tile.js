@@ -14,6 +14,7 @@ export default class Tile {
             body: document.body,
             el: $el,
             link: $el.querySelector('a'),
+            description: $el.querySelector('.tile__description'),
             text: $el.querySelectorAll('.tile__title, .tile__cta'),
             title: $el.querySelector('.tile__title').innerText,
         }
@@ -66,7 +67,8 @@ export default class Tile {
     onClick(e) {
         e.preventDefault()
 
-        if (APP.Layout.isMobile) return
+        // TODO: Mobile fallback
+        // if (APP.Layout.isMobile) return
 
         if (!this.mesh) return
 
