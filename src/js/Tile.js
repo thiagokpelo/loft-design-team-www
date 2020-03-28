@@ -228,37 +228,32 @@ export default class Tile {
             y: shouldZoom ? -20 : this.offset.y,
         }
 
-        const newRatio = getRatio(newScl, this.images[1].image)
+        const newRatio = getRatio(newScl, this.images[APP.Layout.isMobile ? 0 : 1].image)
 
         const delay = shouldZoom ? 0.4 : 0
 
         this.hide(!shouldZoom, !open)
 
-        if (APP.Layout.isMobile) {
-          ev('view:toggle', { shouldOpen: shouldZoom, target: this })
-        } else {
-          TM.to(this.uniforms.u_progressClick, 1.2, {
-              value: shouldZoom ? 1 : 0,
-              ease: Power2.easeInOut,
-              onComplete: () => {
-                  this.isZoomed = shouldZoom
-                  this.hasClicked = open
+        TM.to(this.uniforms.u_progressClick, 1.2, {
+            value: (!APP.Layout.isMobile && shouldZoom) ? 1 : 0,
+            ease: Power2.easeInOut,
+            onComplete: () => {
+                this.isZoomed = shouldZoom
+                this.hasClicked = open
 
-                  TM.to(this.uniforms.u_progressHover, this.duration, {
-                      value: shouldZoom ? 1 : 0,
-                      ease: Power2.easeInOut,
-                  })
+                TM.to(this.uniforms.u_progressHover, this.duration, {
+                    value: shouldZoom ? 1 : 0,
+                    ease: Power2.easeInOut,
+                })
 
-                  ev('view:toggle', { shouldOpen: shouldZoom, target: this })
-              },
-          })
-        }
-
+                ev('view:toggle', { shouldOpen: shouldZoom, target: this })
+            },
+        })
 
         TM.to(this.mesh.scale, 1.2, {
             delay,
-            x: newScl.x,
-            y: newScl.y,
+            x: APP.Layout.isMobile ? 0 : newScl.x,
+            y: APP.Layout.isMobile ? 0 : newScl.y,
             ease: Expo.easeInOut,
             onUpdate: () => { this.getBounds() },
         })
