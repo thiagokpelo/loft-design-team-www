@@ -20,7 +20,7 @@ $breakpoint_tablet: 768px;
 
     pointer-events: none;
 
-    transition: opacity .3s;
+    transition: opacity 1s;
 
     @include maxw($breakpoint_tablet) {
       background-color: var(--color-bg);
