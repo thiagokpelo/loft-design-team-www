@@ -5,6 +5,7 @@
 
 /* DETAIL VIEW
 ---------------------------------------------------------------------------------------------------- */
+$breakpoint_tablet: 768px;
 
 .detail-view {
     overflow: auto;
@@ -19,7 +20,16 @@
 
     pointer-events: none;
 
-    // transition: opacity .3s;
+    transition: opacity .3s;
+
+    @include maxw($breakpoint_tablet) {
+      background-color: var(--color-bg);
+      z-index: 1000;
+
+      .scroll-content {
+        padding: 20px 0 0;
+      }
+  }
 
     &.is-interactive {
         pointer-events: all;
@@ -35,6 +45,11 @@
     @extend .scroll-content;
     padding-left: 10vw;
     height: 100vh;
+    max-width: 100%;
+
+    @include maxw($breakpoint_tablet) {
+      padding: 0;
+    }
 }
 
 /* Content
@@ -45,12 +60,19 @@
     margin-bottom: 5rem;
     font-size: 11rem;
     color: var(--color-text);
+
+    @include maxw($breakpoint_tablet) {
+      font-size: 6rem;
+    }
 }
 
 .detail-view__content {
     padding-bottom: 210px;
     img {
+      object-fit: contain;
       width: 500px;
+      height: auto;
+      max-width: 100%;
     }
     p {
         width: 100%;
@@ -65,6 +87,15 @@
             margin-bottom: 3rem;
         }
     }
+}
+
+.detail-view__description {
+  @include maxw($breakpoint_tablet) {
+    p {
+      max-width: 100%;
+      margin-right: 0;
+    }
+  }
 }
 
 

@@ -40,8 +40,11 @@ export default class DetailView {
         const title = this.$els.el.querySelector('.detail-view__title')
         const contentNodes = this.$els.description.querySelectorAll('p, .tile__image')
         const { title: pageTitle } = APP.Stage.$els
+        const stgsList = [title]
 
-        this.stgs = new ST([title, contentNodes], { type: 'lines', linesClass: 'line' })
+        if (!APP.Layout.isMobile) stgsList.push(contentNodes)
+
+        this.stgs = new ST(stgsList, { type: 'lines', linesClass: 'line' })
 
         this.stgs.lines.forEach((l) => {
             const div = document.createElement('div')

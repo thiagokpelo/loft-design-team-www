@@ -67,9 +67,6 @@ export default class Tile {
     onClick(e) {
         e.preventDefault()
 
-        // TODO: Mobile fallback
-        // if (APP.Layout.isMobile) return
-
         if (!this.mesh) return
 
         this.hasClicked = true
