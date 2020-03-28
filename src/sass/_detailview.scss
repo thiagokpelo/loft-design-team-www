@@ -19,7 +19,7 @@
 
     pointer-events: none;
 
-    transition: opacity 1s;
+    transition: opacity .3s;
 
     @include maxw($bp-mobile) {
       background-color: var(--color-bg);
