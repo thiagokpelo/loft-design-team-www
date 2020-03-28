@@ -234,21 +234,26 @@ export default class Tile {
 
         this.hide(!shouldZoom, !open)
 
-        TM.to(this.uniforms.u_progressClick, 1.2, {
-            value: shouldZoom ? 1 : 0,
-            ease: Power2.easeInOut,
-            onComplete: () => {
-                this.isZoomed = shouldZoom
-                this.hasClicked = open
+        if (APP.Layout.isMobile) {
+          ev('view:toggle', { shouldOpen: shouldZoom, target: this })
+        } else {
+          TM.to(this.uniforms.u_progressClick, 1.2, {
+              value: shouldZoom ? 1 : 0,
+              ease: Power2.easeInOut,
+              onComplete: () => {
+                  this.isZoomed = shouldZoom
+                  this.hasClicked = open
 
-                TM.to(this.uniforms.u_progressHover, this.duration, {
-                    value: shouldZoom ? 1 : 0,
-                    ease: Power2.easeInOut,
-                })
+                  TM.to(this.uniforms.u_progressHover, this.duration, {
+                      value: shouldZoom ? 1 : 0,
+                      ease: Power2.easeInOut,
+                  })
 
-                ev('view:toggle', { shouldOpen: shouldZoom, target: this })
-            },
-        })
+                  ev('view:toggle', { shouldOpen: shouldZoom, target: this })
+              },
+          })
+        }
+
 
         TM.to(this.mesh.scale, 1.2, {
             delay,
