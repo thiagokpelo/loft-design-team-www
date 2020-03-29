@@ -67,9 +67,6 @@ export default class Tile {
     onClick(e) {
         e.preventDefault()
 
-        // TODO: Mobile fallback
-        // if (APP.Layout.isMobile) return
-
         if (!this.mesh) return
 
         this.hasClicked = true
@@ -231,14 +228,14 @@ export default class Tile {
             y: shouldZoom ? -20 : this.offset.y,
         }
 
-        const newRatio = getRatio(newScl, this.images[1].image)
+        const newRatio = getRatio(newScl, this.images[APP.Layout.isMobile ? 0 : 1].image)
 
         const delay = shouldZoom ? 0.4 : 0
 
         this.hide(!shouldZoom, !open)
 
         TM.to(this.uniforms.u_progressClick, 1.2, {
-            value: shouldZoom ? 1 : 0,
+            value: (!APP.Layout.isMobile && shouldZoom) ? 1 : 0,
             ease: Power2.easeInOut,
             onComplete: () => {
                 this.isZoomed = shouldZoom
@@ -255,8 +252,8 @@ export default class Tile {
 
         TM.to(this.mesh.scale, 1.2, {
             delay,
-            x: newScl.x,
-            y: newScl.y,
+            x: APP.Layout.isMobile ? 0 : newScl.x,
+            y: APP.Layout.isMobile ? 0 : newScl.y,
             ease: Expo.easeInOut,
             onUpdate: () => { this.getBounds() },
         })
