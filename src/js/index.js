@@ -2,6 +2,12 @@ import '../sass/styles.scss'
 import Stage from './Stage'
 import Layout from './Layout'
 
+import './loading/modernizr.custom.js'
+import './loading/classie.js'
+import './loading/main.js'
+import './loading/pathLoader.js'
+
+
 const APP = window.APP || {}
 
 /*-----------------------------------------------------------------------------------*/

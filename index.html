@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Loft Design Team - Design Digest</title>
-    <meta name="description" content="Demo for the tutorial on 'Gooey Hover Effect on Images with Three.js'" />
-    <meta name="keywords" content="threejs, webgl, hover, gooey, effect, hover, image, card, tutorial, demo" />
-    <meta name="author" content="Arno Di Nunzio" />
+    <meta name="description" content="Loft Design Team Website" />
+    <meta name="keywords" content="design, loft, interface, web, ui, ux, design team, product design" />
+    <meta name="author" content="Loft Design Team" />
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="https://use.typekit.net/lma7zwj.css">
     <link rel="stylesheet" type="text/css" href="dist/app.css" />
@@ -16,11 +16,69 @@
     var supportsCssVars = function() { var e, t = document.createElement("style"); return t.innerHTML = "root: { --tmp-var: bold; }", document.head.appendChild(t), e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)")), t.parentNode.removeChild(t), e };
     supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
     </script>
+    <script src="src/js/loading/modernizr.custom.js"></script>
     <script src="dist/app.js"></script>
+
 </head>
 
 <body class="demo-1">
-    <main>
+  <div id="ip-container" class="ip-container">
+  <header class="ip-header">
+      <h1 class="ip-logo">
+        <svg class="ip-inner" width="100%" height="100%" viewBox="0 0 230 160" preserveAspectRatio="xMidYMin meet" aria-labelledby="logo_title">
+          <title id="logo_title">Loft Design Team</title>
+              <path class="st0" d="M124.05,82.33v13.32h-2.28V94.3c-0.65,0.97-1.66,1.57-3.05,1.57c-2.67,0-4.34-1.98-4.34-5.05
+                c0-3.07,1.66-5.05,4.34-5.05c1.33,0,2.32,0.54,2.97,1.48v-4.92H124.05z M121.75,90.83c0-2.04-0.95-3.1-2.49-3.1
+                c-1.51,0-2.47,1.14-2.47,3.18c0,2.04,0.95,3.03,2.47,3.03C120.8,93.93,121.75,92.86,121.75,90.83z"/>
+              <path class="st0" d="M134.51,91.56h-7.22c0.17,1.72,1.14,2.49,2.51,2.49c1.12,0,1.85-0.52,2.21-1.38h2.26
+                c-0.49,1.96-2.17,3.22-4.49,3.22c-2.84,0-4.81-1.96-4.81-5.05c0-3.03,1.91-5.05,4.77-5.05c2.96,0,4.77,2.15,4.77,5.22V91.56z
+                 M127.31,89.91h4.84c-0.19-1.37-1.03-2.3-2.43-2.3C128.47,87.61,127.53,88.32,127.31,89.91z"/>
+              <path class="st0" d="M134.85,92.58h2.3c0.13,1.22,0.75,1.65,2.15,1.65c1.37,0,1.91-0.43,1.91-1.16c0-0.69-0.43-1.03-1.89-1.27
+                l-1.1-0.19c-2.08-0.36-3.16-1.27-3.16-2.92c0-1.81,1.42-2.92,4-2.92c2.97,0,4.19,1.29,4.26,3.27h-2.23
+                c-0.06-1.23-0.82-1.59-2.04-1.59c-1.14,0-1.68,0.43-1.68,1.12c0,0.71,0.56,0.99,1.61,1.18l1.22,0.19
+                c2.32,0.41,3.35,1.27,3.35,2.94c0,1.95-1.59,3.03-4.28,3.03C136.51,95.91,135,94.92,134.85,92.58z"/>
+              <path class="st0" d="M144.24,86h2.36v9.65h-2.36V86z M144.25,82.54h2.32v2.21h-2.32V82.54z"/>
+              <path class="st0" d="M157.18,86v9.33c0,2.54-1.63,4.21-4.77,4.21c-2.79,0-4.28-1.37-4.43-3.37h2.32
+                c0.11,1.03,0.86,1.55,2.15,1.55c1.55,0,2.38-0.82,2.38-2.34v-1.22c-0.64,0.9-1.61,1.44-2.96,1.44c-2.62,0-4.36-1.98-4.36-4.92
+                c0-2.96,1.7-4.92,4.34-4.92c1.4,0,2.41,0.58,3.05,1.55V86H157.18z M154.88,90.69c0-1.93-0.95-2.97-2.49-2.97
+                c-1.51,0-2.47,1.12-2.47,2.99c0,1.87,0.95,2.96,2.47,2.96C153.92,93.67,154.88,92.6,154.88,90.69z"/>
+              <path class="st0" d="M167.2,89.25v6.4h-2.36v-6c0-1.23-0.62-1.83-1.81-1.83c-1.03,0-2.15,0.71-2.15,2.43v5.41h-2.36V86h2.28v1.38
+                c0.62-0.92,1.65-1.61,3.01-1.61C165.84,85.78,167.2,86.95,167.2,89.25z"/>
+              <path class="st0" d="M117.94,103.95v5.22c0,0.64,0.32,0.84,1.1,0.84h0.8v1.8c-0.43,0.04-0.86,0.07-1.23,0.07
+                c-2.04,0-3.01-0.69-3.01-2.47v-5.46h-1.5v-1.8h1.5v-2.81h2.34v2.81h1.91v1.8H117.94z"/>
+              <path class="st0" d="M129.78,107.71h-7.22c0.17,1.72,1.14,2.49,2.51,2.49c1.12,0,1.85-0.52,2.21-1.38h2.26
+                c-0.49,1.96-2.17,3.22-4.49,3.22c-2.84,0-4.81-1.96-4.81-5.05c0-3.03,1.91-5.05,4.77-5.05c2.96,0,4.77,2.15,4.77,5.22V107.71z
+                 M122.58,106.06h4.84c-0.19-1.37-1.03-2.3-2.43-2.3C123.74,103.76,122.8,104.47,122.58,106.06z"/>
+              <path class="st0" d="M137.05,111.8c-0.15-0.26-0.22-0.71-0.26-1.18c-0.64,0.9-1.68,1.4-3.1,1.4c-2.06,0-3.48-1.03-3.48-2.9
+                c0-1.61,0.97-2.75,3.7-3.01l1.46-0.13c0.9-0.11,1.37-0.39,1.37-1.1c0-0.75-0.39-1.2-1.76-1.2c-1.35,0-1.91,0.36-2,1.53h-2.32
+                c0.13-2.04,1.33-3.29,4.34-3.29c2.88,0,4.02,1.16,4.02,2.9v5.14c0,0.69,0.13,1.46,0.39,1.83H137.05z M136.74,107.99v-0.88
+                c-0.24,0.22-0.6,0.34-1.1,0.39l-1.27,0.15c-1.31,0.15-1.74,0.62-1.74,1.38c0,0.8,0.54,1.31,1.63,1.31
+                C135.5,110.35,136.74,109.67,136.74,107.99z"/>
+              <path class="st0" d="M154.64,105.43v6.38h-2.36v-6c0-1.23-0.54-1.83-1.66-1.83c-1.03,0-2,0.71-2,2.53v5.31h-2.34v-6
+                c0-1.23-0.56-1.83-1.68-1.83c-0.99,0-1.98,0.71-1.98,2.53v5.31h-2.36v-9.65h2.28v1.38c0.58-0.94,1.48-1.61,2.75-1.61
+                c1.48,0,2.51,0.69,2.99,1.8c0.64-1.03,1.65-1.8,2.99-1.8C153.42,101.93,154.64,103.29,154.64,105.43z"/>
+              <circle class="st0" cx="88.73" cy="74.73" r="9.86"/>
+              <path class="st0" d="M96.82,112.87H80.64c-2.5,0-4.34-2.36-3.72-4.78l8.67-34.14h6.3l8.67,34.14
+                C101.16,110.51,99.33,112.87,96.82,112.87z"/>
+              <path d="M115.09,66.78h2.32v13.11h-2.32V66.78z"/>
+              <path d="M118.86,75.14c0-3.02,1.95-4.97,4.84-4.97s4.83,1.95,4.83,4.97c0,3.02-1.93,4.97-4.83,4.97S118.86,78.16,118.86,75.14z
+                 M126.17,75.14c0-2.01-0.98-3.06-2.47-3.06c-1.51,0-2.47,1.05-2.47,3.06s0.96,3.06,2.47,3.06
+                C125.2,78.2,126.17,77.15,126.17,75.14z"/>
+              <path d="M132.69,69.71v0.68h1.95v1.77h-1.95v7.74h-2.3v-7.74h-1.47v-1.77h1.47v-0.72c0-1.68,0.83-2.95,3.11-2.95
+                c0.37,0,0.87,0.02,1.2,0.06v1.79h-0.81C133.06,68.57,132.69,68.97,132.69,69.71z"/>
+              <path d="M139.12,72.16v5.14c0,0.63,0.31,0.83,1.09,0.83H141v1.77c-0.42,0.04-0.85,0.07-1.22,0.07c-2.01,0-2.96-0.68-2.96-2.43
+                v-5.38h-1.47v-1.77h1.47v-2.76h2.3v2.76H141v1.77H139.12z"/>
+        </svg>
+      </h1>
+      <div class="ip-loader">
+        <svg class="ip-inner" width="60px" height="60px" viewBox="0 0 80 80">
+          <path class="ip-loader-circlebg" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+          <path id="ip-loader-circle" class="ip-loader-circle" d="M40,10C57.351,10,71,23.649,71,40.5S57.351,71,40.5,71 S10,57.351,10,40.5S23.649,10,40.5,10z"/>
+        </svg>
+      </div>
+    </header>
+    </div>
+    <main class="ip-main">
         <div class="frame">
             <div class="frame__links">
                 <a href="https://github.com/thiagokpelo/loft-design-team-www" target="_blank">Github</a>
@@ -113,6 +171,9 @@
           </small>
         </footer>
     </main>
+    <script src="src/js/loading/classie.js"></script>
+		<script src="src/js/loading/pathLoader.js"></script>
+		<script src="src/js/loading/main.js"></script>
 </body>
 
 </html>
