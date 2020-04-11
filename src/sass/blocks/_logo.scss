@@ -1,0 +1,32 @@
+.design-team-logo {
+  display: flex;
+  margin: 0;
+  position: relative;
+
+  &-inner {
+    display: block;
+    margin: 0 auto;
+  }
+
+  svg {
+    width: 220px;
+  }
+
+  path,
+  circle {
+    fill: var(--color-logo);
+  }
+
+  &__main {
+    grid-area: design-team-logo;
+
+    @include maxw($bp-mobile) {
+      order: -1;
+    }
+
+    path,
+    circle {
+      fill: var(--color-logo-inverse);
+    }
+  }
+}
