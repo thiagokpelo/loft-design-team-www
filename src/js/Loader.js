@@ -38,9 +38,9 @@ export default class Loader {
           .fromTo(this.$els.loading, 0.5, { top: '100%' }, { top: '50%' }, '-=0.5')
           .fromTo(this.$els.loadingCircleProgress, 2, { drawSVG: '0' }, { drawSVG: '0 100%' })
           .add('enter')
-          .fromTo(this.$els.logo, 0.8, { scale: 2, top: '30%' }, { scale: 1, top: '0%', ease: Power3.easeOut })
-          .add('logo', '-=0.8')
-          .fromTo(this.$els.logoPaths, 0.8, { fill: '#000' }, { fill: 'transparent' }, 'logo')
+          .fromTo(this.$els.logo, 0.5, { scale: 2, top: '30%' }, { scale: 1, top: '0%', ease: Power3.easeOut })
+          .add('logo', '-=0.5')
+          .fromTo(this.$els.logoPaths, 0.5, { fill: '#000' }, { fill: 'transparent' }, 'logo')
           .fromTo(this.$els.loading, 0.3, { top: '50%', opacity: 1 }, { top: '20%', opacity: 0 }, 'logo')
           .fromTo(this.$els.loaderContainer, 0.5, { height: '100%' }, { height: '0%' }, 'logo')
           .fromTo(this.$els.loaderContainer, 0.3, { opacity: 1 }, { opacity: 0 });

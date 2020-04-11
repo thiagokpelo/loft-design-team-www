@@ -130,7 +130,7 @@ a:focus {
 }
 
 .frame {
-    padding: 0 5vw;
+    padding: 3rem 5vw;
     text-align: center;
     position: relative;
     z-index: 1000;
@@ -226,7 +226,7 @@ a:focus {
         align-content: space-between;
         width: 100%;
         max-width: none;
-        padding: 0 3rem;
+        padding: 3rem;
         pointer-events: none;
         grid-template-columns: 0% 100% 0%;
         grid-template-rows: auto auto auto;
