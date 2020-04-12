@@ -1,6 +1,7 @@
 import '../sass/styles.scss'
 import Stage from './Stage'
 import Layout from './Layout'
+import Loader from './Loader'
 
 const APP = window.APP || {}
 
@@ -13,6 +14,8 @@ const initApp = () => {
 
     APP.Stage = new Stage()
     APP.Layout = new Layout()
+    APP.Loader = new Loader()
+    APP.Loader.start()
 }
 
 if (document.readyState === 'complete' || (document.readyState !== 'loading' && !document.documentElement.doScroll)) {

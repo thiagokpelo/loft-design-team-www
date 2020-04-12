@@ -1,8 +1,12 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dfb33e3c-2d37-4043-a195-c33afebc8d78/deploy-status)](https://app.netlify.com/sites/loftdesignteam/deploys)
 
-# Loft Design Team Website
-Loft Design Team Website
+<br />
 
+<img width="200px" src="./src/img/loft-design-team.svg" alt="Loft Design Team" />
+
+# Loft Design Team Website
+
+https://loftdesignteam.com.br
 
 ## How to add the new post?
 
